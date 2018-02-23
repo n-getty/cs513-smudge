@@ -78,7 +78,7 @@ def main():
 
     corrs = []
     #Iterate over subsequent images to compute correlations
-    for x in range(len(imgs[:n])-1):
+    for x in range(len(imgs[:2])-1):
         im1 = imgs[x]
         im2 = imgs[x+1]
         #correlation = np.zeros_like(im1)
@@ -104,6 +104,7 @@ def main():
     correlation = corrs[0]
     for x in corrs[1:]:
         correlation = np.add(correlation, x)
+
     correlation = correlation / float(len(corrs))
     
     # Zero below threshold
